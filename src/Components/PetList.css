@@ -1,0 +1,21 @@
+/* petList.css */
+.pet-list {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .pet {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .pet h3 {
+    margin-top: 0;
+  }
+  
+  .pet p {
+    margin-bottom: 5px;
+  }
+  

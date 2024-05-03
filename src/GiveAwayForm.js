@@ -1,0 +1,100 @@
+// GiveAwayForm.js
+import React, { useState } from 'react';
+import './GiveAwayForm.css'
+
+const GiveAwayForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phoneNumber: '',
+    petName: '',
+    petBreed: '',
+    petAge: '',
+    questionnaire: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Add form submission logic here, such as saving data to indexed DB
+    console.log('Form submitted:', formData);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <h2>Give A Pet Away</h2>
+      <label htmlFor="name">Your Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+        required
+      />
+      <label htmlFor="email">Your Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+        required
+      />
+      <label htmlFor="phoneNumber">Your Phone Number:</label>
+      <input
+        type="tel"
+        id="phoneNumber"
+        name="phoneNumber"
+        value={formData.phoneNumber}
+        onChange={handleChange}
+        required
+      />
+      <label htmlFor="petName">Pet's Name:</label>
+      <input
+        type="text"
+        id="petName"
+        name="petName"
+        value={formData.petName}
+        onChange={handleChange}
+        required
+      />
+      <label htmlFor="petBreed">Pet's Breed:</label>
+      <input
+        type="text"
+        id="petBreed"
+        name="petBreed"
+        value={formData.petBreed}
+        onChange={handleChange}
+        required
+      />
+      <label htmlFor="petAge">Pet's Age:</label>
+      <input
+        type="number"
+        id="petAge"
+        name="petAge"
+        value={formData.petAge}
+        onChange={handleChange}
+        required
+      />
+      <label htmlFor="questionnaire">Questionnaire:</label>
+      <textarea
+        id="questionnaire"
+        name="questionnaire"
+        value={formData.questionnaire}
+        onChange={handleChange}
+        required
+      />
+      <button type="submit">Request for Give Away</button>
+    </form>
+  );
+};
+
+export default GiveAwayForm;
